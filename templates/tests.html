@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block stylesheet %}
+    <link href="/static/styles_tests.css" rel="stylesheet">
+{% endblock %}
+{% block title %} tests {% endblock %}
+{% block main %}
+    {% if session["type"] == "EXAMINER"%}
+        <div class="examiner-only">
+            <div class="exam_top">
+                <h2 style="text-align:start;">Your Tests</h2>
+                <a href="/test/create"><button class="btn btn-primary m-1"><i class="fa-solid fa-circle-plus"></i>  CREATE</button></a>
+            </div>
+            <div class="card-container-contain">
+                {% if len != 0 %}
+                <div class="card-container">
+                    {% for i in tests %}
+                        <div class="card" style="--grad-color: {{ sub_dict[i[2]] }};" >
+                            <div class="card-body">
+                                <h5 class="card-title">{{ i[1] }}</h5>
+                                <p class="card-text box">{{ i[2] }}</p>
+                                <span class="bottom-row">
+                                    <span class="box">{{ i[7] }}</span>
+                                    <span>
+                                        <span class="box">{{ i[4] }}</span>
+                                        <i class="fa-sharp fa-solid fa-arrows-left-right" style="color: #000000;"></i>
+                                        <span class="box">{{ i[5] }}</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <h3>you do not have any tests</h3>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="large_card_container">
+    {% for i in sub_dict %}
+    <a href="{{ i }}">
+    <div class="card_large" style="--grad-color: {{sub_dict[i]}};">
+        <div class="card_large-body">
+            <b class="subject_large_card">{{ i }}</b>
+        </div>
+    </div>
+</a>
+    {% endfor %}
+</div>
+{% endblock %}

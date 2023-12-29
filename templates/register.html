@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+{% block main %}
+<form action="/register" method="get">
+    <input type="hidden" name="type" value="CANDIDATE">
+    <button class="btn btn-primary" type="submit">CANDIDATE</button>
+</form>
+<br>
+<form action="/register" method="get">
+    <input type="hidden" name="type" value="EXAMINER">
+    <button class="btn btn-primary" type="submit">EXAMINER</button>
+</form>
+{% endblock %}

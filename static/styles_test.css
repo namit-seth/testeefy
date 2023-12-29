@@ -1,0 +1,27 @@
+.question_option{
+    padding:10px;
+    border-color: black;
+    border-style: solid;
+    width:50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+}
+.question>p{
+    font-size: x-large;
+    display: inline
+}
+.box {
+    border-style: solid;
+    border-width: 2px;
+    width: max-content;
+    padding: 5px;
+}
+.option{
+    display: flex;
+    gap: 5px;
+}

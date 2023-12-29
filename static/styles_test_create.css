@@ -1,0 +1,70 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form {
+    width: 60vw;
+    margin: auto;
+}
+
+#topic-select {
+    display: flex;
+    column-gap: 5px;
+}
+
+#topic {
+    min-width: auto;
+}
+
+#subject {
+    width: fit-content;
+}
+
+.question-container {
+    display: grid;
+    width: 100%;
+    padding: 0px;
+    grid-template-columns: 20% 20% 19% 2% 19% 20%;
+    grid-template-areas: " ❓ ❓ ❓ . 🔢 🔢";
+}
+
+.question-input {
+    grid-area: ❓;
+    margin: 5px;
+}
+
+.marks-del {
+    grid-area: 🔢;
+    margin: 5px;
+}
+
+.marks-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.marks {
+    width: 49%;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 84.5% 14.5%;
+}
+
+button {
+    background-color: cornflowerblue;
+    width: fit-content;
+}
+
+.incomplete {
+    background-color: rgba(256, 36, 36, 0.25);
+    border-width: 2px;
+    border-color: rgba(256, 36, 36, 1);
+}
+
+.incomplete:focus {
+    border-color: rgba(256, 36, 36, 1);
+}

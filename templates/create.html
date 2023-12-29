@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block stylesheet %}
+<link href="/static/styles_test_create.css" rel="stylesheet">
+{% endblock %}
+{% block title %} create {% endblock %}
+{% block main %}
+<form action="/test/create" method="POST" id="create_test" class="">
+    <div class="mb-3" id="topic-select">
+        <label for="topic" class="visually-hidden">Enter Topic:-</label>
+        <input type="text" class="form-control" name="topic" id="topic" placeholder="Enter Topic" required>
+        <label for="subject" class="visually-hidden">Select Subject</label>
+        <select name="subject" class="form-select" id="subject" required>
+            <option value="" disabled selected>Select Subject</option>
+                <option value="Geography">Geography</option>
+                <option value="History">History</option>
+                <option value="Science">Science</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Movies">Movies</option>
+                <option value="Literature">Literature</option>
+                <option value="Food and Cuisine">Food and Cuisine</option>
+                <option value="Art and Artists">Art and Artists</option>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Technology">Technology</option>
+                <option value="Biology">Biology</option>
+                <option value="Space and Astronomy">Space and Astronomy</option>
+                <option value="Mythology">Mythology</option>
+                <option value="World Languages">World Languages</option>
+                <option value="Politics">Politics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Environmental Science">Environmental Science</option>
+                <option value="Psychology">Psychology</option>
+              </select>
+    </div>
+    <div id="questions">
+    </div>
+
+    <button onclick="add_question()" type="button" class="btn btn-primary m-1">Add Question</button><br>
+    <button onclick="create_test()" type="button" class="btn btn-primary m-1">Create Test</button>
+</form>
+
+<script src="/static/script_test_create.js" defer></script>
+{% endblock %}

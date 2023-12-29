@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block stylesheet %}
+    <link href="/static/styles_test.css" rel="stylesheet">
+{% endblock %}
+{% block title %} test: {{ test[0][1] }} {% endblock %}
+{% block main %}
+    <h1>{{ test[0][1] }}</h1>
+    <form action="/test/submit" method="POST">
+        <input type="hidden" name="test_id" value="{{test[0][0]}}">
+        {% for i in Questions %}
+            <div class="question_option">
+                <div class="question">
+                    <p>{{ i[2] }} {% if i[2][-1] != "?" %}?{% endif %}</p>
+                    <div>
+                        <span class="box">{{ i[3] }}</span>
+                        <span class="box">{{ i[4] }}</span>
+                    </div>
+                </div>
+                <div class="options">
+                    {% for j in options[i[1]] %}
+                        <div class="option">
+                            <input type="radio" name="{{ i[1] }}" id="{{ j[1] }}" value="{{ j[1] }}" required>
+                            <label for="{{ j[1] }}">{{ j[2] }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+{% endblock %}

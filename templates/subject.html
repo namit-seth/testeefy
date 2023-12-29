@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block stylesheet %}
+    <link href="/static/styles_tests.css" rel="stylesheet">
+{% endblock %}
+{% block title %} tests {% endblock %}
+{% block main %}
+                <div class="large_card_container">
+                    {% for i in tests %}
+                    <a href="/test?id={{ i[0] }}">
+                        <div class="card_large" style="--grad-color: {{ sub_dict[i[2]] }}; font-size: xx-large;" >
+                            <div class="card-body">
+                                <b class="card-title">{{ i[1] }}</b>
+                                <p class="card-text box">{{ i[2] }}</p>
+                                <span class="bottom-row">
+                                    <span class="box">{{ i[7] }}</span>
+                                    <span>
+                                        <span class="box">{{ i[4] }}</span>
+                                        <i class="fa-sharp fa-solid fa-arrows-left-right" style="color: #000000;"></i>
+                                        <span class="box">{{ i[5] }}</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        </a>
+                    {% endfor %}
+                </div>
+        {% endblock %}
